@@ -1,19 +1,19 @@
-var http = require('http');
-const url = require('url');
-const querystring = require('querystring');
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function (req, res){
-   if(req.url == '/hello'){
-       res.writeHead(200, {'ContentType':'text/html'});
-       res.write('<html><body><h1> Hello Amogh </h1></body></html>');
-       res.end();
-   }
-   else if(req.url == '/'){
-        res.writeHead(200, {'ContentType':'text/html'});
-        res.write('<html><body><p>This is home Page.</p></body></html>');
-        res.end();
-    }
+app.get('/', function (req, res) {
+    res.send('<b>My</b> first express http server');
 });
 
-server.listen(2000);
-console.log('Node.js server is running on port 2000...');
+app.get('/hello', function (req, res){
+   res.send('<b>Hello Amogh</b>')
+});
+
+app.get('/hi/:name', function (req, res){
+   const name = req.params.name;
+   res.send("Hey " + name);
+});
+
+app.listen(2000, function (){
+    console.log('Express Server listening at port 2000...')
+});

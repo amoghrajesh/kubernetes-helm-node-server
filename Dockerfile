@@ -1,6 +1,7 @@
 FROM node:14
 
 RUN mkdir /app
+RUN npm install express
 WORKDIR /app
 ADD . /app/
 EXPOSE 2000
