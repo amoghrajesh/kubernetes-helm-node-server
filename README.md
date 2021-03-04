@@ -12,3 +12,7 @@ If this throws an error, check if kubernetes is running using -
 
 If this doesn't show an output, check your kubernetes installation. If done through minikube, run the following - 
 ```minikube start```
+
+To create a simple proxy using port forwarding - 
+1. Get any of the many pods of the deployment using - ```kubectl get pods```
+2. Use port forwarding like - ```kubectl port-forward <name of the pod> <host-port>:<deployment-port>```
