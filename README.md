@@ -25,3 +25,6 @@ Check the history of the deployment using -
 
 Check the replication using -
 ![img.png](img.png)
+
+To stop the deployment -
+```helm uninstall <release name>```
