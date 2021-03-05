@@ -14,6 +14,11 @@ app.get('/hi/:name', function (req, res){
    res.send("Hey " + name);
 });
 
+app.get('/sayName', function (req, res){
+   const name = process.env.myName;
+   res.send("Your name is - " + name);
+});
+
 app.listen(2000, function (){
     console.log('Express Server listening at port 2000...')
 });
