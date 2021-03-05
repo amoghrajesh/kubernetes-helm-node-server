@@ -28,3 +28,13 @@ Check the replication using -
 
 To stop the deployment -
 ```helm uninstall <release name>```
+
+To add a configmap, create a new yaml file in `templates/` and run the helm upgrade command
+
+To view the configmap in the kubernetes cluster, run - 
+```kubectl get configmap```
+OR
+```kubectl describe configmap/<name of the configmap>```
+
+After deploying a configMap, if you want to check if the env variables were set, login into the pod using - 
+```kubectl exec --stdin --tty node-chart-77676fd977-h7kzf  -- /bin/bash```
